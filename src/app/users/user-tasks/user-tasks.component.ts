@@ -1,12 +1,13 @@
 import { Component, computed, DestroyRef, inject, input } from '@angular/core';
 import { UsersService } from '../users.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-user-tasks',
   standalone: true,
   templateUrl: './user-tasks.component.html',
   styleUrl: './user-tasks.component.css',
+  imports: [RouterOutlet]
 })
 export class UserTasksComponent {
   // userId = input.required<string>();
@@ -31,3 +32,4 @@ export class UserTasksComponent {
     this.destroy.onDestroy(() => subscription.unsubscribe());
   }
 }
+
