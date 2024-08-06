@@ -7,7 +7,7 @@ import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
   standalone: true,
   templateUrl: './user-tasks.component.html',
   styleUrl: './user-tasks.component.css',
-  imports: [RouterOutlet,RouterLink]
+  imports: [RouterOutlet, RouterLink],
 })
 export class UserTasksComponent {
   // userId = input.required<string>();
@@ -20,7 +20,7 @@ export class UserTasksComponent {
   //   () => this.userServices.users.find((u) => u.id === this.userId())?.name
   // );
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log(this.activatedRoute);
     const subscription = this.activatedRoute.paramMap.subscribe({
       next: (paramMap) => {
@@ -32,4 +32,3 @@ export class UserTasksComponent {
     this.destroy.onDestroy(() => subscription.unsubscribe());
   }
 }
-

@@ -10,13 +10,14 @@ export const routes: Routes = [
     path: '',
     component: NoTaskComponent,
   },
+
   {
     path: 'users/:userId', //:userId dynamic path
     component: UserTasksComponent,
     children: [
       {
         path: 'tasks',
-        component: TaskComponent,
+        component: TasksComponent,
       },
       {
         path: 'tasks/new',
